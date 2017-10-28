@@ -1,3 +1,5 @@
+module Bamberg
+
 include("pointdistance.jl")
 
 using Compat, BenchmarkTools
@@ -7,3 +9,5 @@ ego = [4000 0.1]
 
 @benchmark findminnorm(list, ego)
 @benchmark fnp(list, ego)
+
+end # module
