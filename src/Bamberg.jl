@@ -4,6 +4,6 @@ export fnp, findminnorm, pointsvecnorm
 export generateidealdata
 
 include("pointdistance.jl")
-include("..\\test\\idealdata.jl")
+include(joinpath("../test/idealdata.jl"))
 
 end 
