@@ -2,7 +2,7 @@ using Bamberg
 using PkgBenchmark
 using Compat
 
-n = 1e7
+n = Int(1e7)
 
 #   Abfang
 if n < 2 
@@ -10,14 +10,14 @@ if n < 2
 end
 
 @benchgroup "Benchmarks FlatArray" begin
-    gridpoints_fa = [collect(1:n) ones(n)]
+    gridpoints_fa = generateidealdata(n,"flat")
 
     @bench "findminnorm" findminnorm(gridpoints_fa, [n-1 1]) 
     @bench "fnp" fnp(gridpoints_fa, [n-1 1]) 
 end
 
 @benchgroup "Benchmarks NestedArray" begin
-    gridpoints_na = [[i 1] for i in 1:n]
+    gridpoints_na = generateidealdata(n,"nested")
 
     @bench "pointsvecnorm" pointsvecnorm(gridpoints_na, [n-1 1])
 end
