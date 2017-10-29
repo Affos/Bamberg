@@ -12,9 +12,9 @@ end
 # vektorisiert
 function fnp(list, ego)
     list = list.-ego
-    list[:,1] = list[:,1].^2
-    list[:,2] = list[:,2].^2
-    distance = list[:,1]+list[:,2]
+    list[1,:] = list[1,:].^2
+    list[2,:] = list[2,:.^2
+    distance = list[1,:]+list[2,:]
     findmin(distance)
 end
 

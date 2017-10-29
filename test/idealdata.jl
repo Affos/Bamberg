@@ -1,6 +1,6 @@
 """
     generateidealdata(numberofgridpoints, kind)
-    
+
 numberofgridpoint   
 kind:
 * 'nested' for array with n gridpoint arrays
@@ -12,9 +12,9 @@ function generateidealdata(numberofgridpoints::Integer, kind)
     n < 2 && throw(ArgumentError("number of gridpoints has to be greater than 1"))
     #   Gridpoints erstellen
     if kind == "flat"
-        gridpoints = [collect(1:n) ones(Int, n)]
+        gridpoints = [collect(1:n) ones(Int, n)]'
     elseif kind == "nested"
-        gridpoints = [[i 1] for i in 1:n]
+        gridpoints = [[i 1] for i in 1:n]'
     else
         throw(ArgumentError("kind has to be either 'flat' or 'nested'"))  
     end
