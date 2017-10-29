@@ -14,9 +14,11 @@ function generateidealdata(numberofgridpoints::Integer, kind)
     if kind == "flat"
         gridpoints = [collect(1:n) ones(Int, n)]'
     elseif kind == "nested"
-        gridpoints = [[i 1] for i in 1:n]'
+        gridpoints = [[i,1] for i in 1:n]
+    elseif kind == "static-nested"
+        gridpoints = [SVector{2, Int}(i,1) for i in 1:n]
     else
-        throw(ArgumentError("kind has to be either 'flat' or 'nested'"))  
+        throw(ArgumentError("kind has to be either 'flat', 'nested' or 'static-nested'"))  
     end
     
     return gridpoints

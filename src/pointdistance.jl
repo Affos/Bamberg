@@ -21,3 +21,12 @@ function pointsvecnorm(list, ego)
     list2 = map(x-> norm(x-ego), list)
     findmin(list2)
 end
+
+function pointsvecnorm_opt(list, ego)
+    nrpoints = length(list)
+    distances = Array{Float64}(nrpoints)
+    for i in 1:nrpoints
+        distances[i] = norm(list[i]-ego)
+    end
+    findmin(distances)
+end

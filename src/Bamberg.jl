@@ -1,6 +1,8 @@
 module Bamberg
 
-export fnp, findminnorm, pointsvecnorm
+using StaticArrays
+
+export fnp, findminnorm, pointsvecnorm, pointsvecnorm_opt
 export generateidealdata
 
 include("pointdistance.jl")
