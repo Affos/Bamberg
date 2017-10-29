@@ -1,7 +1,7 @@
 module Bamberg
 
-export fnp, findminnorm
+export fnp, findminnorm, pointsvecnorm
 
 include("pointdistance.jl")
 
-end # module
+end 

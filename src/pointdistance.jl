@@ -19,6 +19,6 @@ function fnp(list, ego)
 end
 
 function pointsvecnorm(list, ego)
-    list .-+ ego
-    findmin(norm.(list))
+    list2 = list .- ego
+    findmin(norm.(list2))
 end
