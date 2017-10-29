@@ -2,7 +2,7 @@
 function findminnorm(list, ego)
     list .-= ego
     nrpoints = size(list)[1]
-    distances = Array{eltype(list)}(nrpoints)
+    distances = Array{Float64}(nrpoints)
     for i in 1:nrpoints
         distances[i] = norm(list[i,:])
     end
