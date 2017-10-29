@@ -1,12 +1,12 @@
 # erste Schuss
-function findminnorm(p, location)
-    p .-= location
-    nrpoints = size(p)[1]
-    n = Array{eltype(p)}(nrpoints)
+function findminnorm(list, ego)
+    list .-= ego
+    nrpoints = size(list)[1]
+    distances = Array{eltype(list)}(nrpoints)
     for i in 1:nrpoints
-        n[i] = norm(p[i,:])
+        distances[i] = norm(list[i,:])
     end
-    findmin(n)
+    findmin(distances)
 end
 
 # vektorisiert
@@ -17,4 +17,11 @@ function fnp(list, ego)
     distance = list[:,1]+list[:,2]
     value, idx = findmin(distance)
     return idx 
+end
+
+function fmn(list, ego)
+    list =  .- ego
+    res = mapslices(x -> sum(abs2,x), list, 2)  
+    _, idx = findmin(res) 
+    return idx
 end
