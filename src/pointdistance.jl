@@ -14,7 +14,7 @@ function fnp(list, ego)
     list[1,:] = list[1,:].^2
     list[2,:] = list[2,:].^2
     distance = list[1,:]+list[2,:]
-    findmin(distance)
+    findmin(distance) #returns squared distance
 end
 
 function pointsvecnorm(list, ego)
