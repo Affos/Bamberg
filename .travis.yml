@@ -2,7 +2,7 @@
 language: julia
 os:
   - linux
-  - osx
+ # - osx
 julia:
   - 0.6
   - nightly
@@ -11,8 +11,8 @@ notifications:
 git:
   depth: 99999999
 
-#due to build failure on travis (HDF5)
-sudo: required
+#was only needed to install missing packages(?)(HDF5)
+# sudo: required
 
 # uncomment the following lines to allow failures on nightly julia
 # (tests will run but not make your overall status red)
